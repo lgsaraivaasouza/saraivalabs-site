@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SARAIVA LABS • Engenharia de Processos & Soluções Web</title>
+  <style>
+    :root {
+      --bg-main: #090b10;
+      --bg-card: #111520;
+      --bg-card-hover: #161b29;
+      --border: #1e2536;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --saraiva-red: #dc2626;
+      --saraiva-red-glow: rgba(220, 38, 38, 0.25);
+      --tech-green: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* GRID DE FUNDO SUTIL */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(9, 11, 16, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .logo-mark {
+      width: 12px;
+      height: 12px;
+      background: var(--saraiva-red);
+      border-radius: 2px;
+      box-shadow: 0 0 12px var(--saraiva-red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .btn-nav {
+      background: var(--saraiva-red);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0 80px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--tech-green);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--tech-green);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      max-width: 860px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--saraiva-red);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      background: var(--saraiva-red);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 20px var(--saraiva-red-glow);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-muted);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-tag {
+      color: var(--saraiva-red);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    /* PORTFOLIO / CASES GRID */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      transition: transform 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(220, 38, 38, 0.5);
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(220, 38, 38, 0.12);
+      color: #fca5a5;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tech-tags span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #090b10;
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* STACK & METODOLOGIA */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .stack-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .stack-item h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .stack-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* SOBRE / FUNDADOR */
+    .about-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--saraiva-red);
+      border-radius: 14px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-box { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    .about-metrics {
+      display: grid;
+      gap: 16px;
+    }
+
+    .metric {
+      background: #090b10;
+      border: 1px solid var(--border);
+      padding: 16px 20px;
+      border-radius: 10px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--tech-green);
+      font-weight: 900;
+    }
+
+    .metric span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* CTA / CONTATO */
+    .cta-box {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cta-box h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 36px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--text-main);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark"></div>
+        SARAIVA LABS
+      </a>
+      <div class="nav-links">
+        <a href="#projetos">Projetos &amp; Cases</a>
+        <a href="#arquitetura">Arquitetura</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="btn-nav">Falar com Luís G. Saraiva</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="status-pill">
+        <div class="status-dot"></div>
+        ENGENHARIA DE PROCESSOS • AUTOMAÇÃO • SISTEMAS WEB
+      </div>
+      <h1>Transformo gargalos operacionais em <span>sistemas web inteligentes</span> e em tempo real.</h1>
+      <p>
+        Soluções sob medida desenvolvidas por <strong>Luís G. Saraiva</strong> — unindo experiência prática na gestão de Centros de Distribuição com arquitetura web leve, APIs, dashboards de gestão à vista e automação de processos.
+      </p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn-primary">Ver Soluções Desenvolvidas</a>
+        <a href="#contato" class="btn-secondary">Projetos Sob Demanda</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CASES / PORTFÓLIO -->
+  <section id="projetos">
+    <div class="container">
+      <span class="section-tag">Portfólio Técnico</span>
+      <h2 class="section-title">Sistemas em Produção</h2>
+      <p class="section-desc">
+        Ferramentas arquitetadas para eliminar controles manuais, integrar plataformas e dar visibilidade imediata para equipes operacionais e gestores.
+      </p>
+
+      <div class="grid-3">
+        <!-- CASE 1 -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Gestão à Vista • TV &amp; Web</span>
+            <h3>Torre de Controle Operacional</h3>
+            <p>
+              Painel dedicado em tempo real que unifica o acompanhamento de cargas de abastecimento de lojas e a fila prioritária de pedidos e-commerce, com alertas automáticos de SLA e monitoramento de falhas de integração.
+            </p>
+          </div>
+          <div class="tech-tags">
+            <span>HTML5 / CSS3 / JS</span>
+            <span>Apps Script API</span>
+            <span>Shopify REST</span>
+            <span>Auto-Sync</span>
+          </div>
+        </div>
+
+        <!-- CASE 2 -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Expedição &amp; E-Commerce</span>
+            <h3>Portal Logístico &amp; Packing</h3>
+            <p>
+              Aplicação web responsiva com controle de acesso por perfil, conferência de itens por bipagem (SKU ou EAN), emissão automática de etiquetas de transporte e rastreabilidade completa da bancada de embalagem.
+            </p>
+          </div>
+          <div class="tech-tags">
+            <span>SPA Web App</span>
+            <span>SmartEnvios API</span>
+            <span>Poka-Yoke</span>
+            <span>Mobile &amp; Coletor</span>
+          </div>
+        </div>
+
+        <!-- CASE 3 -->
+        <div class="card">
+          <div>
+            <span class="card-badge">Dados &amp; Sincronização</span>
+            <h3>Motor de Estoque &amp; Catálogo Vivo</h3>
+            <p>
+              Automação assíncrona que sincroniza milhares de SKUs ativos, saldos disponíveis e notas fiscais diretamente em nuvem, alimentando consultas instantâneas sem depender de exportações manuais de CSV.
+            </p>
+          </div>
+          <div class="tech-tags">
+            <span>Google Cloud / GAS</span>
+            <span>JSON / Webhooks</span>
+            <span>+7.000 SKUs</span>
+            <span>Zero Latência</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK & SOLUÇÕES PARA NEGÓCIOS -->
+  <section id="arquitetura">
+    <div class="container">
+      <span class="section-tag">Capacidade Técnica &amp; Consultoria</span>
+      <h2 class="section-title">O que a SARAIVA LABS constrói</h2>
+      <p class="section-desc">
+        Arquitetura enxuta, sem custos pesados de infraestrutura e totalmente adaptada à realidade de operações logísticas, distribuidoras e comércios locais.
+      </p>
+
+      <div class="stack-grid">
+        <div class="stack-item">
+          <h4>Dashboards &amp; Torre de Controle</h4>
+          <p>Telas de monitoramento ao vivo para TVs, tablets e celulares com indicadores de produtividade, metas e alertas de atraso.</p>
+        </div>
+        <div class="stack-item">
+          <h4>Sistemas Web Sob Medida</h4>
+          <p>Portais internos, controle de estoque, frente de caixa leve (PDV), checklists digitais e controle de expedição sem mensalidades engessadas.</p>
+        </div>
+        <div class="stack-item">
+          <h4>Integração via APIs &amp; Automação</h4>
+          <p>Conexão entre e-commerce, ERPs, transportadoras e planilhas inteligentes para eliminar digitação duplicada e erro humano.</p>
+        </div>
+        <div class="stack-item">
+          <h4>Engenharia de Processos (POP)</h4>
+          <p>Mapeamento de fluxo operacional, criação de travas à prova de erros (Poka-Yoke) e indicadores de desempenho (IPH / SLA).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <div class="about-box">
+        <div>
+          <span class="section-tag">Quem está por trás</span>
+          <h2 class="section-title">Luís G. Saraiva</h2>
+          <p style="color: var(--text-muted); margin-bottom: 14px;">
+            Profissional com 10 anos de trajetória na logística e graduação em Administração em andamento, atuando na linha de frente da coordenação de operações de distribuição e e-commerce.
+          </p>
+          <p style="color: var(--text-muted);">
+            A <strong>SARAIVA LABS</strong> nasceu da prática: a convicção de que quem vive a operação todos os dias tem a visão exata para construir ferramentas mais rápidas, intuitivas e eficientes do que softwares genéricos de prateleira.
+          </p>
+        </div>
+        <div class="about-metrics">
+          <div class="metric">
+            <strong>10+ Anos</strong>
+            <span>Vivência prática em Operações &amp; Logística</span>
+          </div>
+          <div class="metric">
+            <strong>100% Web</strong>
+            <span>Sistemas leves prontos para PC, Tablet, TV e Coletor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" style="border-bottom: none;">
+    <div class="container">
+      <div class="cta-box">
+        <span class="section-tag">Conexão &amp; Projetos</span>
+        <h2>Vamos estruturar a próxima solução?</h2>
+        <p>
+          Seja para trocar experiências sobre arquitetura de processos, conhecer mais detalhes técnicos dos projetos ou desenvolver um sistema sob medida para a sua operação.
+        </p>
+        <!-- Substitua o link abaixo pelo seu WhatsApp ou LinkedIn -->
+        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Lu%C3%ADs%2C%20vim%20pelo%20site%20da%20SARAIVA%20LABS!" target="_blank" class="btn-primary">
+          Entrar em Contato
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>SARAIVA LABS</strong> • Arquitetura de Processos &amp; Desenvolvimento Web • Piracicaba, SP</p>
+    </div>
+  </footer>
+
+</body>
+</html>
