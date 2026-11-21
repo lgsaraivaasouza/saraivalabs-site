@@ -461,4 +461,300 @@
     .about-box h2 {
       font-size: 2rem;
       font-weight: 900;
-      margin-bottom: 14
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .about-metrics {
+      display: grid;
+      gap: 14px;
+    }
+
+    .metric {
+      background: #f8fafc;
+      border: 1px solid var(--light-border);
+      padding: 18px 20px;
+      border-radius: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--emerald-dark);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .metric span {
+      font-size: 0.86rem;
+      color: var(--text-dark-body);
+    }
+
+    /* BANNER CTA ESMERALDA PROFUNDO */
+    .cta-box {
+      background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 18px;
+      padding: 52px 32px;
+      text-align: center;
+      color: var(--text-light);
+      box-shadow: 0 16px 36px rgba(6, 78, 59, 0.22);
+    }
+
+    .cta-box .section-tag {
+      color: #6ee7b7;
+    }
+
+    .cta-box h2 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .cta-box p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark-bg);
+      border-top: 1px solid var(--dark-border);
+      padding: 36px 0;
+      text-align: center;
+      color: var(--text-light-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 800;
+      color: var(--text-light);
+      letter-spacing: 1.5px;
+    }
+
+    .footer-brand img {
+      height: 28px;
+      width: auto;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .about-box { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0675/1977/4808/files/22243.png?v=1794152561" alt="Logo SARAIVA LABS">
+        SARAIVA LABS
+      </a>
+      <div class="nav-links">
+        <a href="#solucoes">Soluções</a>
+        <a href="#projetos">Projetos em Produção</a>
+        <a href="#sobre">Experiência</a>
+        <a href="#contato" class="btn-nav">Solicitar Projeto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MÓDULO 1: HERO DARK TECH -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="status-pill">
+          Sistemas Web Sob Medida • Gestão Logística &amp; Administrativa
+        </div>
+        <h1>Sistemas leves e sob medida para <span>organizar sua operação</span> e acelerar seus resultados.</h1>
+        <p>
+          Desenvolvemos ferramentas web práticas para empresas, distribuidoras e comércios locais — substituindo planilhas manuais e processos lentos por painéis de controle, frente de caixa (PDV), gestão de estoque e agendamentos online.
+        </p>
+        <div class="hero-actions">
+          <a href="#solucoes" class="btn-primary">Conhecer Soluções</a>
+          <a href="#projetos" class="btn-secondary">Ver Sistemas em Produção</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-panel-header">
+          <img src="https://cdn.shopify.com/s/files/1/0675/1977/4808/files/22243.png?v=1794152561" alt="Símbolo SARAIVA LABS">
+          <div>
+            <strong>ARQUITETURA SARAIVA LABS</strong>
+            <span>● Engenharia de Processos &amp; Web</span>
+          </div>
+        </div>
+        <ul class="spec-list">
+          <li><strong>Frente de Caixa &amp; Estoque</strong> <span class="spec-tag">COMÉRCIO</span></li>
+          <li><strong>Painéis de Agendamento</strong> <span class="spec-tag">SERVIÇOS</span></li>
+          <li><strong>Torre de Controle &amp; WMS</strong> <span class="spec-tag">LOGÍSTICA</span></li>
+          <li><strong>Integrações &amp; Dashboards</strong> <span class="spec-tag">GESTÃO</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- MÓDULO 2: SOLUÇÕES (ARDÓSIA CLARA COM CARDS DIFERENCIADOS) -->
+  <section id="solucoes" class="sec-solucoes">
+    <div class="container">
+      <span class="section-tag">O que desenvolvemos</span>
+      <h2 class="section-title">Tecnologia aplicada à rotina do seu negócio</h2>
+      <p class="section-desc">
+        Criamos sistemas diretos ao ponto, acessíveis pelo navegador do computador, celular, tablet ou TV, sem mensalidades abusivas e adaptados exatamente à forma como você trabalha.
+      </p>
+
+      <div class="grid-2">
+        <div class="solution-card">
+          <span class="solution-icon">Comércio &amp; Varejo</span>
+          <h3>Frente de Caixa (PDV) &amp; Controle de Estoque</h3>
+          <p>
+            Registro rápido de vendas, baixa automática de mercadorias, alerta de estoque mínimo e acompanhamento financeiro diário para pequenos comércios, distribuidoras e lojas.
+          </p>
+        </div>
+
+        <div class="solution-card mod-blue">
+          <span class="solution-icon">Serviços &amp; Atendimento</span>
+          <h3>Painéis de Agendamento Online</h3>
+          <p>
+            Gestão visual de horários, controle de profissionais e agenda organizada para barbearias, salões de beleza, clínicas e prestadores de serviço, reduzindo furos e conflitos de horário.
+          </p>
+        </div>
+
+        <div class="solution-card mod-amber">
+          <span class="solution-icon">Logística &amp; Operações</span>
+          <h3>Gestão de Expedição, Packing &amp; Dashboards</h3>
+          <p>
+            Telas de monitoramento em tempo real (Torre de Controle), conferência por código de barras e acompanhamento de produtividade por equipe e turno.
+          </p>
+        </div>
+
+        <div class="solution-card mod-teal">
+          <span class="solution-icon">Rotinas Administrativas</span>
+          <h3>Automação de Processos &amp; Integrações</h3>
+          <p>
+            Conexão entre planilhas, lojas virtuais, transportadoras e relatórios gerenciais para eliminar retrabalho, digitação duplicada e falhas operacionais.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 3: PROJETOS EM PRODUÇÃO (SALA DE CONTROLE DARK) -->
+  <section id="projetos" class="sec-projetos">
+    <div class="container">
+      <span class="section-tag">Portfólio Técnico</span>
+      <h2 class="section-title">Sistemas Ativos em Operação</h2>
+      <p class="section-desc">
+        Projetos reais desenvolvidos por <strong>Luís Gustavo Saraiva</strong> que hoje rodam diariamente na linha de frente operacional.
+      </p>
+
+      <div class="grid-3">
+        <div class="case-card">
+          <div>
+            <span class="case-badge">● Em Operação • TV &amp; Web</span>
+            <h3>Torre de Controle Operacional</h3>
+            <p>
+              Painel de gestão à vista que consolida em tempo real o status de cargas para lojas e a fila de pedidos do e-commerce, com alertas visuais de atraso (SLA) e monitoramento de integrações.
+            </p>
+          </div>
+          <div class="tech-tags">
+            <span>Dashboard ao Vivo</span>
+            <span>Integração API</span>
+            <span>Alertas de SLA</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div>
+            <span class="case-badge">● Em Operação • Expedição</span>
+            <h3>Portal de Conferência &amp; Packing</h3>
+            <p>
+              Sistema web com controle de acesso por usuário, conferência de pedidos via leitor de código de barras (SKU/EAN), emissão de etiquetas e rastreabilidade completa da embalagem.
+            </p>
+          </div>
+          <div class="tech-tags">
+            <span>Web App Responsivo</span>
+            <span>Leitura EAN / SKU</span>
+            <span>Rastreabilidade</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div>
+            <span class="case-badge">● Em Operação • Dados</span>
+            <h3>Catálogo Vivo &amp; Sincronização de Estoque</h3>
+            <p>
+              Motor automatizado que mantém milhares de produtos, saldos e notas fiscais sincronizados em nuvem para consulta instantânea em tablets e coletores de dados.
+            </p>
+          </div>
+          <div class="tech-tags">
+            <span>+7.000 Produtos</span>
+            <span>Nuvem &amp; JSON</span>
+            <span>Consulta Mobile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 4: EXPERIÊNCIA & CONTATO -->
+  <section id="sobre" class="sec-sobre">
+    <div class="container">
+      <div class="about-box">
+        <div>
+          <span class="section-tag">Quem desenvolve</span>
+          <h2>Luís Gustavo Saraiva</h2>
+          <p style="color: var(--text-dark-body); margin-bottom: 14px;">
+            Com <strong>10 anos de experiência na gestão logística e administrativa</strong>, atuo diretamente na estruturação de processos, controle de estoques, expedição e liderança de equipes.
+          </p>
+          <p style="color: var(--text-dark-body);">
+            Toda a engenharia dos sistemas da <strong>SARAIVA LABS</strong> nasce da vivência prática com grandes sistemas corporativos — incluindo <strong>TOTVS Consinco, plataformas WMS e ERPs de mercado</strong>. Essa bagagem permite criar ferramentas leves e intuitivas que trazem a inteligência e a segurança dos grandes sistemas para a realidade de qualquer empresa ou comércio.
+          </p>
+        </div>
+        <div class="about-metrics">
+          <div class="metric">
+            <strong>Base WMS &amp; ERP</strong>
+            <span>Arquitetura inspirada na lógica de grandes sistemas corporativos (TOTVS Consinco e WMS)</span>
+          </div>
+          <div class="metric">
+            <strong>10+ Anos de Prática</strong>
+            <span>Vivência real em processos logísticos, estoque e gestão administrativa</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANNER CTA DE CONVERSÃO -->
+      <div id="contato" class="cta-box">
+        <span class="section-tag">Atendimento &amp; Projetos</span>
+        <h2>Precisa organizar um processo ou criar um sistema sob medida?</h2>
+        <p>
+          Converse diretamente com <strong>Luís Gustavo Saraiva</strong> para apresentar a necessidade do seu comércio ou operação e estruturar uma solução prática.
+        </p>
+        <!-- Troque os 9s abaixo pelo seu número com DDD -->
+        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Lu%C3%ADs%20Gustavo%2C%20vim%20pelo%20site%20da%20SARAIVA%20LABS%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto!" target="_blank" class="btn-primary">
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0675/1977/4808/files/22243.png?v=1794152561" alt="SARAIVA LABS">
+        SARAIVA LABS
+      </div>
+      <p>Desenvolvido por Luís Gustavo Saraiva • Sistemas Web, Logística &amp; Gestão Administrativa</p>
+    </div>
+  </footer>
+
+</body>
+</html>
