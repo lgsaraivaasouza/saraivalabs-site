@@ -106,6 +106,9 @@
       padding: 10px 20px;
       border-radius: 8px;
       font-weight: 800;
+      border: none;
+      cursor: pointer;
+      font-size: 0.92rem;
       transition: background 0.2s, transform 0.2s;
     }
 
@@ -180,8 +183,11 @@
       border-radius: 8px;
       font-weight: 800;
       font-size: 1rem;
+      border: none;
+      cursor: pointer;
       box-shadow: 0 4px 20px var(--emerald-glow);
       transition: transform 0.2s, background 0.2s;
+      display: inline-block;
     }
 
     .btn-primary:hover {
@@ -206,7 +212,7 @@
       background: #162032;
     }
 
-    /* PAINEL LATERAL DO HERO (DESTAQUE VISUAL DA MARCA) */
+    /* PAINEL LATERAL DO HERO */
     .hero-panel {
       background: var(--dark-surface);
       border: 1px solid var(--dark-border);
@@ -271,7 +277,7 @@
       font-size: 0.75rem;
     }
 
-    /* MÓDULO 2: SOLUÇÕES (FUNDO ARDÓSIA CLARA COM MÓDULOS COLORIDOS) */
+    /* MÓDULO 2: SOLUÇÕES (FUNDO ARDÓSIA CLARA) */
     .sec-solucoes {
       background-color: var(--light-bg);
       color: var(--text-dark);
@@ -355,7 +361,7 @@
       font-size: 0.95rem;
     }
 
-    /* MÓDULO 3: PROJETOS EM PRODUÇÃO (SALA DE CONTROLE DARK) */
+    /* MÓDULO 3: PROJETOS EM PRODUÇÃO */
     .sec-projetos {
       background: linear-gradient(180deg, #0b111e 0%, #0f172a 100%);
       color: var(--text-light);
@@ -437,7 +443,7 @@
       border-radius: 6px;
     }
 
-    /* MÓDULO 4: EXPERIÊNCIA & CONTATO (MODULAR CLARO) */
+    /* MÓDULO 4: EXPERIÊNCIA & CONTATO */
     .sec-sobre {
       background-color: var(--light-bg);
       color: var(--text-dark);
@@ -544,9 +550,149 @@
       width: auto;
     }
 
+    /* MODAL DE TRIAGEM DE PROJETO */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 8, 15, 0.82);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-card {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-top: 4px solid var(--emerald);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 500px;
+      padding: 30px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+      position: relative;
+      color: var(--text-light);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--dark-bg);
+      border: 1px solid var(--dark-border);
+      color: var(--text-light-muted);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--text-light);
+      border-color: var(--emerald);
+    }
+
+    .modal-header {
+      margin-bottom: 20px;
+    }
+
+    .modal-header span {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--emerald);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .modal-header h3 {
+      font-size: 1.45rem;
+      font-weight: 800;
+    }
+
+    .modal-header p {
+      font-size: 0.88rem;
+      color: var(--text-light-muted);
+      margin-top: 4px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #cbd5e1;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--dark-bg);
+      border: 1px solid var(--dark-border);
+      color: var(--text-light);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--emerald);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 88px;
+    }
+
+    .btn-submit-modal {
+      width: 100%;
+      background: var(--emerald);
+      color: #042f2e;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 6px;
+      box-shadow: 0 4px 16px var(--emerald-glow);
+      transition: background 0.2s;
+    }
+
+    .btn-submit-modal:hover {
+      background: #34d399;
+    }
+
     @media (max-width: 860px) {
       .hero-grid, .about-box { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+      .nav-links a { display: none; }
     }
   </style>
 </head>
@@ -562,7 +708,7 @@
         <a href="#solucoes">Soluções</a>
         <a href="#projetos">Projetos em Produção</a>
         <a href="#sobre">Experiência</a>
-        <a href="#contato" class="btn-nav">Solicitar Projeto</a>
+        <button type="button" class="btn-nav" onclick="abrirModal()">Solicitar Projeto</button>
       </div>
     </div>
   </nav>
@@ -602,7 +748,7 @@
     </div>
   </header>
 
-  <!-- MÓDULO 2: SOLUÇÕES (ARDÓSIA CLARA COM CARDS DIFERENCIADOS) -->
+  <!-- MÓDULO 2: SOLUÇÕES -->
   <section id="solucoes" class="sec-solucoes">
     <div class="container">
       <span class="section-tag">O que desenvolvemos</span>
@@ -647,7 +793,7 @@
     </div>
   </section>
 
-  <!-- MÓDULO 3: PROJETOS EM PRODUÇÃO (SALA DE CONTROLE DARK) -->
+  <!-- MÓDULO 3: PROJETOS EM PRODUÇÃO -->
   <section id="projetos" class="sec-projetos">
     <div class="container">
       <span class="section-tag">Portfólio Técnico</span>
@@ -738,10 +884,9 @@
         <p>
           Converse diretamente com <strong>Luís Gustavo Saraiva</strong> para apresentar a necessidade do seu comércio ou operação e estruturar uma solução prática.
         </p>
-        <!-- Troque os 9s abaixo pelo seu número com DDD -->
-        <a href="https://wa.me/55199813677622?text=Ol%C3%A1%20Lu%C3%ADs%20Gustavo%2C%20vim%20pelo%20site%20da%20SARAIVA%20LABS%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto!" target="_blank" class="btn-primary">
-          Falar no WhatsApp
-        </a>
+        <button type="button" class="btn-primary" onclick="abrirModal()">
+          Solicitar Orçamento / Contato
+        </button>
       </div>
     </div>
   </section>
@@ -755,6 +900,102 @@
       <p>Desenvolvido por Luís Gustavo Saraiva • Sistemas Web, Logística &amp; Gestão Administrativa</p>
     </div>
   </footer>
+
+  <!-- MODAL DE TRIAGEM -->
+  <div id="modalProjeto" class="modal-overlay" onclick="fecharFora(event)">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="fecharModal()" aria-label="Fechar">&times;</button>
+      <div class="modal-header">
+        <span>SARAIVA LABS • Novo Projeto</span>
+        <h3>Conte sobre sua necessidade</h3>
+        <p>Preencha os dados rápidos abaixo para iniciar o atendimento já contextualizado no WhatsApp.</p>
+      </div>
+
+      <form onsubmit="enviarWhatsApp(event)">
+        <div class="form-group">
+          <label for="cliNome">Seu Nome *</label>
+          <input type="text" id="cliNome" placeholder="Ex: Carlos Mendes" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cliEmpresa">Empresa / Comércio / Segmento *</label>
+          <input type="text" id="cliEmpresa" placeholder="Ex: Barbearia Estilo, Distribuidora Alfa, Loja..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="cliTipo">O que você precisa estruturar? *</label>
+          <select id="cliTipo" required>
+            <option value="" disabled selected>Selecione uma opção...</option>
+            <option value="Frente de Caixa (PDV) e Controle de Estoque">Frente de Caixa (PDV) e Controle de Estoque</option>
+            <option value="Painel de Agendamento Online">Painel de Agendamento Online</option>
+            <option value="Torre de Controle / Gestão Logística">Torre de Controle / Gestão Logística</option>
+            <option value="Automação de Planilhas e Integrações">Automação de Planilhas e Integrações</option>
+            <option value="Sistema Web Sob Medida / Outro">Sistema Web Sob Medida / Outro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cliDetalhes">Resumo da rotina ou objetivo (opcional)</label>
+          <textarea id="cliDetalhes" placeholder="Ex: Hoje controlo tudo no caderno/planilha e preciso agilizar o atendimento e o estoque..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-modal">
+          Iniciar Conversa no WhatsApp →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // =====================================================================
+    // CONFIGURAÇÃO: TROQUE PELO SEU NÚMERO REAL (55 + DDD + NÚMERO)
+    // =====================================================================
+    const WHATSAPP_DESTINO = "5519981367622";
+
+    const modal = document.getElementById('modalProjeto');
+
+    function abrirModal() {
+      modal.classList.add('open');
+      document.getElementById('cliNome').focus();
+    }
+
+    function fecharModal() {
+      modal.classList.remove('open');
+    }
+
+    function fecharFora(event) {
+      if (event.target === modal) {
+        fecharModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        fecharModal();
+      }
+    });
+
+    function enviarWhatsApp(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('cliNome').value.trim();
+      const empresa = document.getElementById('cliEmpresa').value.trim();
+      const tipo = document.getElementById('cliTipo').value;
+      const detalhes = document.getElementById('cliDetalhes').value.trim();
+
+      let mensagem = `Olá Luís Gustavo! Vim pelo site da *SARAIVA LABS* e gostaria de conversar sobre um projeto.\n\n`;
+      mensagem += `*Nome:* ${nome}\n`;
+      mensagem += `*Negócio/Segmento:* ${empresa}\n`;
+      mensagem += `*Interesse:* ${tipo}\n`;
+      if (detalhes) {
+        mensagem += `*Detalhes:* ${detalhes}\n`;
+      }
+
+      const url = `https://wa.me/${WHATSAPP_DESTINO}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
+      fecharModal();
+    }
+  </script>
 
 </body>
 </html>
