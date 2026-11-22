@@ -3,26 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SARAIVA LABS • Sistemas Web, Gestão Logística & Administrativa</title>
+  <title>SARAIVA LABS • Sistemas Web, Gestão Logística e Administrativa</title>
   <style>
     :root {
-      --emerald: #10b981;
-      --emerald-dark: #059669;
-      --emerald-deep: #064e3b;
-      --emerald-glow: rgba(16, 185, 129, 0.22);
-      --emerald-soft: rgba(16, 185, 129, 0.12);
+      /* Assinatura Crimson Rubi */
+      --rubi: #e11d48;
+      --rubi-hover: #f43f5e;
+      --rubi-light: #fb7185;
+      --rubi-dark: #be123c;
+      --rubi-deep: #4c0519;
+      --rubi-glow: rgba(225, 29, 72, 0.32);
+      --rubi-soft: rgba(225, 29, 72, 0.14);
 
-      --dark-bg: #090e17;
-      --dark-surface: #111927;
-      --dark-border: #1e293b;
+      /* Painéis Modulares Dark Tech */
+      --dark-bg: #0b0e17;
+      --dark-surface: #121726;
+      --dark-surface-elevated: #171e31;
+      --dark-border: #1e2538;
 
-      --light-bg: #eef2f6;
+      /* Fundo Claro Harmonioso da Página */
+      --page-bg: #eef2f6;
+      --page-dot: #cbd5e1;
       --light-surface: #ffffff;
       --light-border: #cbd5e1;
 
+      /* Tipografia */
+      --text-white: #ffffff;
       --text-light: #f8fafc;
       --text-light-muted: #94a3b8;
-      --text-dark: #0f172a;
+      --text-dark: #090a0f;
       --text-dark-body: #334155;
     }
 
@@ -35,8 +44,10 @@
     }
 
     body {
-      background-color: var(--dark-bg);
-      color: var(--text-light);
+      background-color: var(--page-bg);
+      background-image: radial-gradient(var(--page-dot) 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: var(--text-dark);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -47,13 +58,14 @@
       padding: 0 24px;
     }
 
-    /* NAVBAR DARK INTEGRADA À LOGO */
+    /* NAVBAR DARK TECH INTEGRADA AO LOGO */
     nav {
       position: sticky;
       top: 0;
-      background: rgba(9, 14, 23, 0.92);
-      backdrop-filter: blur(12px);
+      background: rgba(11, 14, 23, 0.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--dark-border);
+      box-shadow: 0 8px 28px rgba(9, 10, 15, 0.14);
       z-index: 100;
     }
 
@@ -72,14 +84,30 @@
       font-weight: 900;
       letter-spacing: 1.8px;
       text-decoration: none;
-      color: var(--text-light);
+      color: var(--text-white);
     }
 
-    .logo img {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.35));
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.55));
+    }
+
+    .logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    .logo-text .brand-heavy {
+      font-weight: 900;
+      color: var(--text-white);
+    }
+
+    .logo-text .brand-light {
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.88);
     }
 
     .nav-links {
@@ -97,34 +125,44 @@
     }
 
     .nav-links a:hover {
-      color: var(--emerald);
+      color: var(--rubi-light);
     }
 
     .btn-nav {
-      background: var(--emerald);
-      color: #042f2e !important;
+      background: var(--rubi);
+      color: var(--text-white) !important;
       padding: 10px 20px;
       border-radius: 8px;
       font-weight: 800;
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       cursor: pointer;
       font-size: 0.92rem;
-      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 16px var(--rubi-glow);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
     .btn-nav:hover {
-      background: #34d399;
+      background: var(--rubi-hover);
       transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(225, 29, 72, 0.45);
     }
 
-    /* MÓDULO 1: HERO (DARK TECH ESMERALDA) */
+    /* MÓDULO 1: HERO MODULAR DARK TECH SOBRE O FUNDO CLARO */
+    .hero-wrapper {
+      padding: 36px 0 24px;
+    }
+
     .hero {
       background:
-        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.14), transparent 45%),
-        radial-gradient(circle at 15% 80%, rgba(5, 150, 105, 0.1), transparent 40%),
+        radial-gradient(circle at 82% 18%, rgba(225, 29, 72, 0.22), transparent 46%),
+        radial-gradient(circle at 12% 85%, rgba(190, 18, 60, 0.14), transparent 42%),
         var(--dark-bg);
-      padding: 84px 0 88px;
-      border-bottom: 1px solid var(--dark-border);
+      border: 1px solid var(--dark-border);
+      border-top: 3px solid var(--rubi);
+      border-radius: 22px;
+      padding: 68px 52px;
+      box-shadow: 0 24px 54px rgba(11, 14, 23, 0.16);
+      color: var(--text-light);
     }
 
     .hero-grid {
@@ -138,9 +176,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--emerald-soft);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      color: #34d399;
+      background: var(--rubi-soft);
+      border: 1px solid rgba(251, 113, 133, 0.35);
+      color: var(--rubi-light);
       padding: 6px 14px;
       border-radius: 99px;
       font-size: 0.78rem;
@@ -151,20 +189,21 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.1rem, 4.3vw, 3.2rem);
+      font-size: clamp(2.05rem, 4.1vw, 3.1rem);
       font-weight: 900;
-      line-height: 1.18;
+      line-height: 1.16;
       letter-spacing: -0.5px;
       margin-bottom: 22px;
-      color: var(--text-light);
+      color: var(--text-white);
     }
 
     .hero h1 span {
-      color: var(--emerald);
+      color: var(--rubi-light);
+      text-shadow: 0 0 28px rgba(225, 29, 72, 0.35);
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: var(--text-light-muted);
       margin-bottom: 34px;
     }
@@ -176,50 +215,51 @@
     }
 
     .btn-primary {
-      background: var(--emerald);
-      color: #042f2e;
+      background: var(--rubi);
+      color: var(--text-white);
       text-decoration: none;
       padding: 14px 28px;
-      border-radius: 8px;
+      border-radius: 9px;
       font-weight: 800;
       font-size: 1rem;
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       cursor: pointer;
-      box-shadow: 0 4px 20px var(--emerald-glow);
-      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 6px 24px var(--rubi-glow);
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
       display: inline-block;
     }
 
     .btn-primary:hover {
-      background: #34d399;
+      background: var(--rubi-hover);
       transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(225, 29, 72, 0.45);
     }
 
     .btn-secondary {
-      background: var(--dark-surface);
-      border: 1px solid var(--dark-border);
-      color: var(--text-light);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--text-white);
       text-decoration: none;
       padding: 14px 28px;
-      border-radius: 8px;
+      border-radius: 9px;
       font-weight: 700;
       font-size: 1rem;
       transition: border-color 0.2s, background 0.2s;
     }
 
     .btn-secondary:hover {
-      border-color: var(--emerald);
-      background: #162032;
+      border-color: var(--rubi-light);
+      background: rgba(225, 29, 72, 0.12);
     }
 
     /* PAINEL LATERAL DO HERO */
     .hero-panel {
       background: var(--dark-surface);
       border: 1px solid var(--dark-border);
-      border-top: 3px solid var(--emerald);
+      border-top: 3px solid var(--rubi);
       border-radius: 16px;
       padding: 28px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
     .hero-panel-header {
@@ -231,20 +271,16 @@
       border-bottom: 1px solid var(--dark-border);
     }
 
-    .hero-panel-header img {
-      height: 46px;
-      width: auto;
-    }
-
     .hero-panel-header strong {
       display: block;
-      font-size: 1rem;
-      letter-spacing: 1px;
+      font-size: 0.98rem;
+      letter-spacing: 0.8px;
+      color: var(--text-white);
     }
 
     .hero-panel-header span {
       font-size: 0.8rem;
-      color: var(--emerald);
+      color: var(--rubi-light);
       font-weight: 700;
     }
 
@@ -264,28 +300,36 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: border-color 0.2s;
+    }
+
+    .spec-list li:hover {
+      border-color: rgba(225, 29, 72, 0.45);
     }
 
     .spec-list li strong {
-      color: var(--text-light);
+      color: var(--text-white);
       font-weight: 700;
     }
 
     .spec-tag {
-      color: var(--emerald);
+      color: var(--rubi-light);
+      background: var(--rubi-soft);
+      border: 1px solid rgba(225, 29, 72, 0.28);
+      padding: 2px 8px;
+      border-radius: 5px;
       font-weight: 800;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
     }
 
-    /* MÓDULO 2: SOLUÇÕES (FUNDO ARDÓSIA CLARA) */
-    .sec-solucoes {
-      background-color: var(--light-bg);
-      color: var(--text-dark);
-      padding: 84px 0;
+    /* CABEÇALHOS DE SEÇÃO SOBRE O FUNDO CLARO */
+    .section-block {
+      padding: 64px 0;
     }
 
     .section-tag {
-      color: var(--emerald-dark);
+      color: var(--rubi);
       font-size: 0.8rem;
       font-weight: 800;
       text-transform: uppercase;
@@ -294,20 +338,21 @@
       display: block;
     }
 
-    .sec-solucoes .section-title {
+    .section-title {
       font-size: 2rem;
       font-weight: 900;
       margin-bottom: 12px;
       color: var(--text-dark);
     }
 
-    .sec-solucoes .section-desc {
+    .section-desc {
       color: var(--text-dark-body);
       max-width: 680px;
-      margin-bottom: 44px;
+      margin-bottom: 40px;
       font-size: 1.02rem;
     }
 
+    /* MÓDULO 2: SOLUÇÕES (PAINÉIS MODULARES DARK TECH) */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -315,65 +360,57 @@
     }
 
     .solution-card {
-      background: var(--light-surface);
-      border: 1px solid var(--light-border);
-      border-top: 4px solid var(--emerald);
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: var(--dark-bg);
+      border: 1px solid var(--dark-border);
+      border-top: 4px solid var(--rubi);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 14px 30px rgba(11, 14, 23, 0.12);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     }
 
-    .solution-card.mod-blue { border-top-color: #0284c7; }
-    .solution-card.mod-amber { border-top-color: #d97706; }
-    .solution-card.mod-teal { border-top-color: #0d9488; }
+    .solution-card.mod-white { border-top-color: var(--text-white); }
+    .solution-card.mod-rose { border-top-color: var(--rubi-light); }
+    .solution-card.mod-deep { border-top-color: var(--rubi-dark); }
 
     .solution-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.09);
+      border-color: rgba(225, 29, 72, 0.55);
+      box-shadow: 0 20px 38px rgba(11, 14, 23, 0.18);
     }
 
     .solution-icon {
       display: inline-block;
-      background: #ecfdf5;
-      color: var(--emerald-dark);
+      background: var(--rubi-soft);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+      color: var(--rubi-light);
       font-weight: 800;
       font-size: 0.74rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       padding: 5px 12px;
       border-radius: 6px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .mod-blue .solution-icon { background: #e0f2fe; color: #0369a1; }
-    .mod-amber .solution-icon { background: #fef3c7; color: #b45309; }
-    .mod-teal .solution-icon { background: #ccfbf1; color: #0f766e; }
+    .mod-white .solution-icon {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: var(--text-white);
+    }
 
     .solution-card h3 {
-      font-size: 1.25rem;
+      font-size: 1.24rem;
       margin-bottom: 10px;
-      color: var(--text-dark);
+      color: var(--text-white);
     }
 
     .solution-card p {
-      color: var(--text-dark-body);
+      color: var(--text-light-muted);
       font-size: 0.95rem;
     }
 
-    /* MÓDULO 3: PROJETOS EM PRODUÇÃO */
-    .sec-projetos {
-      background: linear-gradient(180deg, #0b111e 0%, #0f172a 100%);
-      color: var(--text-light);
-      padding: 84px 0;
-      border-top: 1px solid var(--dark-border);
-      border-bottom: 1px solid var(--dark-border);
-    }
-
-    .sec-projetos .section-tag { color: var(--emerald); }
-    .sec-projetos .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 12px; }
-    .sec-projetos .section-desc { color: var(--text-light-muted); max-width: 680px; margin-bottom: 44px; font-size: 1.02rem; }
-
+    /* MÓDULO 3: PROJETOS EM PRODUÇÃO (PAINÉIS MODULARES DARK TECH) */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -383,17 +420,19 @@
     .case-card {
       background: var(--dark-surface);
       border: 1px solid var(--dark-border);
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: border-color 0.2s, transform 0.2s;
+      box-shadow: 0 14px 30px rgba(11, 14, 23, 0.12);
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
     .case-card:hover {
-      border-color: var(--emerald);
-      transform: translateY(-3px);
+      border-color: var(--rubi);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 38px rgba(11, 14, 23, 0.18);
     }
 
     .case-badge {
@@ -404,11 +443,11 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 4px 12px;
+      padding: 5px 12px;
       border-radius: 99px;
-      background: var(--emerald-soft);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      background: var(--rubi-soft);
+      color: var(--rubi-light);
+      border: 1px solid rgba(225, 29, 72, 0.32);
       margin-bottom: 16px;
       width: fit-content;
     }
@@ -416,7 +455,7 @@
     .case-card h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
-      color: var(--text-light);
+      color: var(--text-white);
     }
 
     .case-card p {
@@ -436,7 +475,7 @@
     .tech-tags span {
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--text-light-muted);
+      color: var(--text-light);
       background: var(--dark-bg);
       border: 1px solid var(--dark-border);
       padding: 4px 10px;
@@ -444,31 +483,38 @@
     }
 
     /* MÓDULO 4: EXPERIÊNCIA & CONTATO */
-    .sec-sobre {
-      background-color: var(--light-bg);
-      color: var(--text-dark);
-      padding: 84px 0;
-    }
-
     .about-box {
-      background: var(--light-surface);
-      border: 1px solid var(--light-border);
-      border-left: 6px solid var(--emerald-dark);
-      border-radius: 16px;
-      padding: 38px;
+      background: var(--dark-bg);
+      border: 1px solid var(--dark-border);
+      border-left: 6px solid var(--rubi);
+      border-radius: 18px;
+      padding: 40px;
       display: grid;
       grid-template-columns: 1.75fr 1fr;
       gap: 32px;
       align-items: center;
-      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
-      margin-bottom: 48px;
+      box-shadow: 0 18px 38px rgba(11, 14, 23, 0.14);
+      margin-bottom: 36px;
+      color: var(--text-light);
+    }
+
+    .about-box .section-tag {
+      color: var(--rubi-light);
     }
 
     .about-box h2 {
       font-size: 2rem;
       font-weight: 900;
       margin-bottom: 14px;
-      color: var(--text-dark);
+      color: var(--text-white);
+    }
+
+    .about-box p {
+      color: var(--text-light-muted);
+    }
+
+    .about-box strong {
+      color: var(--text-white);
     }
 
     .about-metrics {
@@ -477,8 +523,8 @@
     }
 
     .metric {
-      background: #f8fafc;
-      border: 1px solid var(--light-border);
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
       padding: 18px 20px;
       border-radius: 12px;
     }
@@ -486,36 +532,38 @@
     .metric strong {
       display: block;
       font-size: 1.2rem;
-      color: var(--emerald-dark);
+      color: var(--rubi-light);
       font-weight: 800;
       margin-bottom: 4px;
     }
 
     .metric span {
       font-size: 0.86rem;
-      color: var(--text-dark-body);
+      color: var(--text-light-muted);
     }
 
-    /* BANNER CTA ESMERALDA PROFUNDO */
+    /* BANNER CTA CRIMSON RUBI + DARK TECH */
     .cta-box {
-      background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      border-radius: 18px;
-      padding: 52px 32px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.34), transparent 65%),
+        linear-gradient(135deg, #270712 0%, var(--dark-bg) 75%);
+      border: 1px solid rgba(225, 29, 72, 0.45);
+      border-radius: 20px;
+      padding: 54px 32px;
       text-align: center;
-      color: var(--text-light);
-      box-shadow: 0 16px 36px rgba(6, 78, 59, 0.22);
+      color: var(--text-white);
+      box-shadow: 0 22px 44px rgba(11, 14, 23, 0.18);
     }
 
     .cta-box .section-tag {
-      color: #6ee7b7;
+      color: var(--rubi-light);
     }
 
     .cta-box h2 {
       font-size: 2.1rem;
       font-weight: 900;
       margin-bottom: 14px;
-      color: #ffffff;
+      color: var(--text-white);
     }
 
     .cta-box p {
@@ -525,11 +573,12 @@
       margin: 0 auto 30px;
     }
 
-    /* FOOTER */
+    /* FOOTER DARK TECH */
     footer {
       background: var(--dark-bg);
       border-top: 1px solid var(--dark-border);
       padding: 36px 0;
+      margin-top: 28px;
       text-align: center;
       color: var(--text-light-muted);
       font-size: 0.88rem;
@@ -541,21 +590,16 @@
       gap: 10px;
       margin-bottom: 8px;
       font-weight: 800;
-      color: var(--text-light);
+      color: var(--text-white);
       letter-spacing: 1.5px;
-    }
-
-    .footer-brand img {
-      height: 28px;
-      width: auto;
     }
 
     /* MODAL DE TRIAGEM DE PROJETO */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(5, 8, 15, 0.82);
-      backdrop-filter: blur(6px);
+      background: rgba(9, 10, 15, 0.84);
+      backdrop-filter: blur(8px);
       display: none;
       align-items: center;
       justify-content: center;
@@ -576,14 +620,14 @@
     .modal-card {
       background: var(--dark-surface);
       border: 1px solid var(--dark-border);
-      border-top: 4px solid var(--emerald);
-      border-radius: 16px;
+      border-top: 4px solid var(--rubi);
+      border-radius: 18px;
       width: 100%;
       max-width: 500px;
       padding: 30px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.65);
       position: relative;
-      color: var(--text-light);
+      color: var(--text-white);
     }
 
     .modal-close {
@@ -605,8 +649,8 @@
     }
 
     .modal-close:hover {
-      color: var(--text-light);
-      border-color: var(--emerald);
+      color: var(--text-white);
+      border-color: var(--rubi);
     }
 
     .modal-header {
@@ -616,7 +660,7 @@
     .modal-header span {
       font-size: 0.75rem;
       font-weight: 800;
-      color: var(--emerald);
+      color: var(--rubi-light);
       text-transform: uppercase;
       letter-spacing: 1.5px;
       display: block;
@@ -626,6 +670,7 @@
     .modal-header h3 {
       font-size: 1.45rem;
       font-weight: 800;
+      color: var(--text-white);
     }
 
     .modal-header p {
@@ -643,7 +688,7 @@
       font-size: 0.84rem;
       font-weight: 700;
       margin-bottom: 6px;
-      color: #cbd5e1;
+      color: var(--text-light);
     }
 
     .form-group input,
@@ -652,18 +697,19 @@
       width: 100%;
       background: var(--dark-bg);
       border: 1px solid var(--dark-border);
-      color: var(--text-light);
+      color: var(--text-white);
       padding: 12px 14px;
       border-radius: 8px;
       font-size: 0.95rem;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: var(--emerald);
+      border-color: var(--rubi);
+      box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.18);
     }
 
     .form-group textarea {
@@ -673,24 +719,26 @@
 
     .btn-submit-modal {
       width: 100%;
-      background: var(--emerald);
-      color: #042f2e;
-      border: none;
+      background: var(--rubi);
+      color: var(--text-white);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       padding: 14px;
-      border-radius: 8px;
+      border-radius: 9px;
       font-weight: 800;
       font-size: 1rem;
       cursor: pointer;
       margin-top: 6px;
-      box-shadow: 0 4px 16px var(--emerald-glow);
-      transition: background 0.2s;
+      box-shadow: 0 6px 20px var(--rubi-glow);
+      transition: background 0.2s, transform 0.2s;
     }
 
     .btn-submit-modal:hover {
-      background: #34d399;
+      background: var(--rubi-hover);
+      transform: translateY(-1px);
     }
 
     @media (max-width: 860px) {
+      .hero { padding: 42px 24px; }
       .hero-grid, .about-box { grid-template-columns: 1fr; }
       .nav-links a { display: none; }
     }
@@ -698,11 +746,34 @@
 </head>
 <body>
 
+  <!-- NAVBAR DARK TECH -->
   <nav>
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <img src="https://cdn.shopify.com/s/files/1/0675/1977/4808/files/22243.png?v=1794152561" alt="Logo SARAIVA LABS">
-        SARAIVA LABS
+        <!-- Ícone Vetorial Oficial SARAIVA LABS (Crimson Rubi) -->
+        <svg class="logo-mark" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo SARAIVA LABS">
+          <g stroke="#be123c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M44 20 L24 31 L14 55 L24 79 L44 90"/>
+            <path d="M24 31 L38 45 L24 55 L38 65 L24 79"/>
+            <path d="M76 20 L96 31 L106 55 L96 79 L76 90"/>
+            <path d="M96 31 L82 45 L96 55 L82 65 L96 79"/>
+          </g>
+          <g fill="#e11d48">
+            <polygon points="44,14 50,17.5 50,24.5 44,28 38,24.5 38,17.5"/>
+            <polygon points="76,14 82,17.5 82,24.5 76,28 70,24.5 70,17.5"/>
+            <polygon points="14,48 20,51.5 20,58.5 14,62 8,58.5 8,51.5"/>
+            <polygon points="106,48 112,51.5 112,58.5 106,62 100,58.5 100,51.5"/>
+            <polygon points="44,82 50,85.5 50,92.5 44,96 38,92.5 38,85.5"/>
+            <polygon points="76,82 82,85.5 82,92.5 76,96 70,92.5 70,85.5"/>
+          </g>
+          <path d="M51 15 H69 L60 28 L69 41 H51 L60 28 Z" stroke="#fb7185" stroke-width="3.2" fill="#2a0813" stroke-linejoin="round"/>
+          <path d="M48 26 L36 33 V50 L76 68 V83 L60 92 L40 81 V69" stroke="#fb7185" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M72 26 L84 33 V46 M46 45 L72 57 V75" stroke="#e11d48" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="80" cy="49" r="4.5" stroke="#fb7185" stroke-width="3" fill="#0b0e17"/>
+          <circle cx="46" cy="64" r="4.5" stroke="#fb7185" stroke-width="3" fill="#0b0e17"/>
+          <circle cx="60" cy="75" r="6.5" fill="#e11d48" stroke="#fb7185" stroke-width="2.5"/>
+        </svg>
+        <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </a>
       <div class="nav-links">
         <a href="#solucoes">Soluções</a>
@@ -713,43 +784,63 @@
     </div>
   </nav>
 
-  <!-- MÓDULO 1: HERO DARK TECH -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="status-pill">
-          Sistemas Web Sob Medida • Gestão Logística &amp; Administrativa
-        </div>
-        <h1>Sistemas leves e sob medida para <span>organizar sua operação</span> e acelerar seus resultados.</h1>
-        <p>
-          Desenvolvemos ferramentas web práticas para empresas, distribuidoras e comércios locais — substituindo planilhas manuais e processos lentos por painéis de controle, frente de caixa (PDV), gestão de estoque e agendamentos online.
-        </p>
-        <div class="hero-actions">
-          <a href="#solucoes" class="btn-primary">Conhecer Soluções</a>
-          <a href="#projetos" class="btn-secondary">Ver Sistemas em Produção</a>
-        </div>
-      </div>
-
-      <div class="hero-panel">
-        <div class="hero-panel-header">
-          <img src="https://cdn.shopify.com/s/files/1/0675/1977/4808/files/22243.png?v=1794152561" alt="Símbolo SARAIVA LABS">
+  <!-- MÓDULO 1: HERO DARK TECH FLUTUANTE -->
+  <div class="hero-wrapper">
+    <div class="container">
+      <header class="hero">
+        <div class="hero-grid">
           <div>
-            <strong>ARQUITETURA SARAIVA LABS</strong>
-            <span>● Engenharia de Processos &amp; Web</span>
+            <div class="status-pill">
+              Sistemas Web Sob Medida • Gestão Logística e Administrativa
+            </div>
+            <h1>Sistemas leves e sob medida para <span>organizar sua operação</span> e acelerar seus resultados.</h1>
+            <p>
+              Desenvolvemos ferramentas web práticas para empresas, distribuidoras e comércios locais — substituindo planilhas manuais e processos lentos por painéis de controle, frente de caixa (PDV), gestão de estoque e agendamentos online.
+            </p>
+            <div class="hero-actions">
+              <a href="#solucoes" class="btn-primary">Conhecer Soluções</a>
+              <a href="#projetos" class="btn-secondary">Ver Sistemas em Produção</a>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="hero-panel-header">
+              <svg style="width:44px;height:44px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(225,29,72,0.5));" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#be123c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M44 20 L24 31 L14 55 L24 79 L44 90"/>
+                  <path d="M76 20 L96 31 L106 55 L96 79 L76 90"/>
+                </g>
+                <g fill="#e11d48">
+                  <polygon points="44,14 50,17.5 50,24.5 44,28 38,24.5 38,17.5"/>
+                  <polygon points="76,14 82,17.5 82,24.5 76,28 70,24.5 70,17.5"/>
+                  <polygon points="14,48 20,51.5 20,58.5 14,62 8,58.5 8,51.5"/>
+                  <polygon points="106,48 112,51.5 112,58.5 106,62 100,58.5 100,51.5"/>
+                  <polygon points="44,82 50,85.5 50,92.5 44,96 38,92.5 38,85.5"/>
+                  <polygon points="76,82 82,85.5 82,92.5 76,96 70,92.5 70,85.5"/>
+                </g>
+                <path d="M51 15 H69 L60 28 L69 41 H51 L60 28 Z" stroke="#fb7185" stroke-width="3.2" fill="#2a0813" stroke-linejoin="round"/>
+                <path d="M48 26 L36 33 V50 L76 68 V83 L60 92 L40 81 V69" stroke="#fb7185" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="60" cy="75" r="6.5" fill="#e11d48" stroke="#fb7185" stroke-width="2.5"/>
+              </svg>
+              <div>
+                <strong>ARQUITETURA SARAIVA LABS</strong>
+                <span>● Engenharia de Processos e Web</span>
+              </div>
+            </div>
+            <ul class="spec-list">
+              <li><strong>Frente de Caixa e Estoque</strong> <span class="spec-tag">COMÉRCIO</span></li>
+              <li><strong>Painéis de Agendamento</strong> <span class="spec-tag">SERVIÇOS</span></li>
+              <li><strong>Torre de Controle e WMS</strong> <span class="spec-tag">LOGÍSTICA</span></li>
+              <li><strong>Integrações e Dashboards</strong> <span class="spec-tag">GESTÃO</span></li>
+            </ul>
           </div>
         </div>
-        <ul class="spec-list">
-          <li><strong>Frente de Caixa &amp; Estoque</strong> <span class="spec-tag">COMÉRCIO</span></li>
-          <li><strong>Painéis de Agendamento</strong> <span class="spec-tag">SERVIÇOS</span></li>
-          <li><strong>Torre de Controle &amp; WMS</strong> <span class="spec-tag">LOGÍSTICA</span></li>
-          <li><strong>Integrações &amp; Dashboards</strong> <span class="spec-tag">GESTÃO</span></li>
-        </ul>
-      </div>
+      </header>
     </div>
-  </header>
+  </div>
 
   <!-- MÓDULO 2: SOLUÇÕES -->
-  <section id="solucoes" class="sec-solucoes">
+  <section id="solucoes" class="section-block">
     <div class="container">
       <span class="section-tag">O que desenvolvemos</span>
       <h2 class="section-title">Tecnologia aplicada à rotina do seu negócio</h2>
@@ -759,32 +850,32 @@
 
       <div class="grid-2">
         <div class="solution-card">
-          <span class="solution-icon">Comércio &amp; Varejo</span>
-          <h3>Frente de Caixa (PDV) &amp; Controle de Estoque</h3>
+          <span class="solution-icon">Comércio e Varejo</span>
+          <h3>Frente de Caixa (PDV) e Controle de Estoque</h3>
           <p>
             Registro rápido de vendas, baixa automática de mercadorias, alerta de estoque mínimo e acompanhamento financeiro diário para pequenos comércios, distribuidoras e lojas.
           </p>
         </div>
 
-        <div class="solution-card mod-blue">
-          <span class="solution-icon">Serviços &amp; Atendimento</span>
+        <div class="solution-card mod-white">
+          <span class="solution-icon">Serviços e Atendimento</span>
           <h3>Painéis de Agendamento Online</h3>
           <p>
             Gestão visual de horários, controle de profissionais e agenda organizada para barbearias, salões de beleza, clínicas e prestadores de serviço, reduzindo furos e conflitos de horário.
           </p>
         </div>
 
-        <div class="solution-card mod-amber">
-          <span class="solution-icon">Logística &amp; Operações</span>
-          <h3>Gestão de Expedição, Packing &amp; Dashboards</h3>
+        <div class="solution-card mod-rose">
+          <span class="solution-icon">Logística e Operações</span>
+          <h3>Gestão de Expedição, Packing e Dashboards</h3>
           <p>
             Telas de monitoramento em tempo real (Torre de Controle), conferência por código de barras e acompanhamento de produtividade por equipe e turno.
           </p>
         </div>
 
-        <div class="solution-card mod-teal">
+        <div class="solution-card mod-deep">
           <span class="solution-icon">Rotinas Administrativas</span>
-          <h3>Automação de Processos &amp; Integrações</h3>
+          <h3>Automação de Processos e Integrações</h3>
           <p>
             Conexão entre planilhas, lojas virtuais, transportadoras e relatórios gerenciais para eliminar retrabalho, digitação duplicada e falhas operacionais.
           </p>
@@ -794,7 +885,7 @@
   </section>
 
   <!-- MÓDULO 3: PROJETOS EM PRODUÇÃO -->
-  <section id="projetos" class="sec-projetos">
+  <section id="projetos" class="section-block">
     <div class="container">
       <span class="section-tag">Portfólio Técnico</span>
       <h2 class="section-title">Sistemas Ativos em Operação</h2>
@@ -805,7 +896,7 @@
       <div class="grid-3">
         <div class="case-card">
           <div>
-            <span class="case-badge">● Em Operação • TV &amp; Web</span>
+            <span class="case-badge">● Em Operação • TV e Web</span>
             <h3>Torre de Controle Operacional</h3>
             <p>
               Painel de gestão à vista que consolida em tempo real o status de cargas para lojas e a fila de pedidos do e-commerce, com alertas visuais de atraso (SLA) e monitoramento de integrações.
@@ -821,7 +912,7 @@
         <div class="case-card">
           <div>
             <span class="case-badge">● Em Operação • Expedição</span>
-            <h3>Portal de Conferência &amp; Packing</h3>
+            <h3>Portal de Conferência e Packing</h3>
             <p>
               Sistema web com controle de acesso por usuário, conferência de pedidos via leitor de código de barras (SKU/EAN), emissão de etiquetas e rastreabilidade completa da embalagem.
             </p>
@@ -836,14 +927,14 @@
         <div class="case-card">
           <div>
             <span class="case-badge">● Em Operação • Dados</span>
-            <h3>Catálogo Vivo &amp; Sincronização de Estoque</h3>
+            <h3>Catálogo Vivo e Sincronização de Estoque</h3>
             <p>
               Motor automatizado que mantém milhares de produtos, saldos e notas fiscais sincronizados em nuvem para consulta instantânea em tablets e coletores de dados.
             </p>
           </div>
           <div class="tech-tags">
             <span>+7.000 Produtos</span>
-            <span>Nuvem &amp; JSON</span>
+            <span>Nuvem e JSON</span>
             <span>Consulta Mobile</span>
           </div>
         </div>
@@ -851,23 +942,23 @@
     </div>
   </section>
 
-  <!-- MÓDULO 4: EXPERIÊNCIA & CONTATO -->
-  <section id="sobre" class="sec-sobre">
+  <!-- MÓDULO 4: EXPERIÊNCIA E CONTATO -->
+  <section id="sobre" class="section-block">
     <div class="container">
       <div class="about-box">
         <div>
           <span class="section-tag">Quem desenvolve</span>
           <h2>Luís Gustavo Saraiva</h2>
-          <p style="color: var(--text-dark-body); margin-bottom: 14px;">
+          <p style="margin-bottom: 14px;">
             Com <strong>10 anos de experiência na gestão logística e administrativa</strong>, atuo diretamente na estruturação de processos, controle de estoques, expedição e liderança de equipes.
           </p>
-          <p style="color: var(--text-dark-body);">
+          <p>
             Toda a engenharia dos sistemas da <strong>SARAIVA LABS</strong> nasce da vivência prática com grandes sistemas corporativos — incluindo <strong>TOTVS Consinco, plataformas WMS e ERPs de mercado</strong>. Essa bagagem permite criar ferramentas leves e intuitivas que trazem a inteligência e a segurança dos grandes sistemas para a realidade de qualquer empresa ou comércio.
           </p>
         </div>
         <div class="about-metrics">
           <div class="metric">
-            <strong>Base WMS &amp; ERP</strong>
+            <strong>Base WMS e ERP</strong>
             <span>Arquitetura inspirada na lógica de grandes sistemas corporativos (TOTVS Consinco e WMS)</span>
           </div>
           <div class="metric">
@@ -879,7 +970,7 @@
 
       <!-- BANNER CTA DE CONVERSÃO -->
       <div id="contato" class="cta-box">
-        <span class="section-tag">Atendimento &amp; Projetos</span>
+        <span class="section-tag">Atendimento e Projetos</span>
         <h2>Precisa organizar um processo ou criar um sistema sob medida?</h2>
         <p>
           Converse diretamente com <strong>Luís Gustavo Saraiva</strong> para apresentar a necessidade do seu comércio ou operação e estruturar uma solução prática.
@@ -894,10 +985,14 @@
   <footer>
     <div class="container">
       <div class="footer-brand">
-        <img src="https://cdn.shopify.com/s/files/1/0675/1977/4808/files/22243.png?v=1794152561" alt="SARAIVA LABS">
-        SARAIVA LABS
+        <svg style="width:28px;height:28px;filter:drop-shadow(0 0 6px rgba(225,29,72,0.45));" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M51 15 H69 L60 28 L69 41 H51 L60 28 Z" stroke="#fb7185" stroke-width="4" fill="#2a0813" stroke-linejoin="round"/>
+          <path d="M48 26 L36 33 V50 L76 68 V83 L60 92 L40 81 V69" stroke="#fb7185" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="60" cy="75" r="7" fill="#e11d48"/>
+        </svg>
+        <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </div>
-      <p>Desenvolvido por Luís Gustavo Saraiva • Sistemas Web, Logística &amp; Gestão Administrativa</p>
+      <p>Desenvolvido por Luís Gustavo Saraiva • Sistemas Web, Logística e Gestão Administrativa</p>
     </div>
   </footer>
 
