@@ -62,7 +62,7 @@
     nav {
       position: sticky;
       top: 0;
-      background: rgba(11, 14, 23, 0.94);
+      background: rgba(11, 14, 23, 0.95);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--dark-border);
       box-shadow: 0 8px 28px rgba(9, 10, 15, 0.14);
@@ -73,41 +73,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 76px;
+      height: 88px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 1.2rem;
-      font-weight: 900;
-      letter-spacing: 1.8px;
       text-decoration: none;
-      color: var(--text-white);
     }
 
     .logo img {
-      height: 40px;
+      height: 68px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.45));
+      mix-blend-mode: lighten;
+      filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.45));
+      transition: transform 0.2s;
     }
 
-    .logo-text {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 5px;
-    }
-
-    .logo-text .brand-heavy {
-      font-weight: 900;
-      color: var(--text-white);
-    }
-
-    .logo-text .brand-light {
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.88);
+    .logo:hover img {
+      transform: scale(1.02);
     }
 
     .nav-links {
@@ -272,15 +257,17 @@
     }
 
     .hero-panel-header img {
-      height: 46px;
+      height: 68px;
       width: auto;
       object-fit: contain;
+      mix-blend-mode: lighten;
       filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.45));
+      flex-shrink: 0;
     }
 
     .hero-panel-header strong {
       display: block;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       letter-spacing: 0.8px;
       color: var(--text-white);
     }
@@ -584,7 +571,7 @@
     footer {
       background: var(--dark-bg);
       border-top: 1px solid var(--dark-border);
-      padding: 36px 0;
+      padding: 40px 0;
       margin-top: 28px;
       text-align: center;
       color: var(--text-light-muted);
@@ -592,20 +579,19 @@
     }
 
     .footer-brand {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-      font-weight: 800;
-      color: var(--text-white);
-      letter-spacing: 1.5px;
+      justify-content: center;
+      margin-bottom: 12px;
     }
 
     .footer-brand img {
-      height: 28px;
+      height: 96px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 6px rgba(225, 29, 72, 0.4));
+      mix-blend-mode: lighten;
+      filter: drop-shadow(0 0 12px rgba(225, 29, 72, 0.4));
     }
 
     /* MODAL DE TRIAGEM DE PROJETO */
@@ -752,6 +738,8 @@
     }
 
     @media (max-width: 860px) {
+      .nav-inner { height: 76px; }
+      .logo img { height: 56px; }
       .hero { padding: 42px 24px; }
       .hero-grid, .about-box { grid-template-columns: 1fr; }
       .nav-links a { display: none; }
@@ -765,7 +753,6 @@
     <div class="container nav-inner">
       <a href="#" class="logo">
         <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="Logo SARAIVA LABS">
-        <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </a>
       <div class="nav-links">
         <a href="#solucoes">Soluções</a>
@@ -962,7 +949,6 @@
     <div class="container">
       <div class="footer-brand">
         <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="SARAIVA LABS">
-        <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </div>
       <p>Desenvolvido por Luís Gustavo Saraiva • Sistemas Web, Logística e Gestão Administrativa</p>
     </div>
