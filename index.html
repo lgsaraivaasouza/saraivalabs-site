@@ -87,11 +87,11 @@
       color: var(--text-white);
     }
 
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      flex-shrink: 0;
-      filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.55));
+    .logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.45));
     }
 
     .logo-text {
@@ -269,6 +269,13 @@
       padding-bottom: 18px;
       margin-bottom: 18px;
       border-bottom: 1px solid var(--dark-border);
+    }
+
+    .hero-panel-header img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.45));
     }
 
     .hero-panel-header strong {
@@ -482,7 +489,7 @@
       border-radius: 6px;
     }
 
-    /* MÓDULO 4: EXPERIÊNCIA & CONTATO */
+    /* MÓDULO 4: EXPERIÊNCIA E CONTATO */
     .about-box {
       background: var(--dark-bg);
       border: 1px solid var(--dark-border);
@@ -592,6 +599,13 @@
       font-weight: 800;
       color: var(--text-white);
       letter-spacing: 1.5px;
+    }
+
+    .footer-brand img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 6px rgba(225, 29, 72, 0.4));
     }
 
     /* MODAL DE TRIAGEM DE PROJETO */
@@ -750,29 +764,7 @@
   <nav>
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <!-- Ícone Vetorial Oficial SARAIVA LABS (Crimson Rubi) -->
-        <svg class="logo-mark" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo SARAIVA LABS">
-          <g stroke="#be123c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M44 20 L24 31 L14 55 L24 79 L44 90"/>
-            <path d="M24 31 L38 45 L24 55 L38 65 L24 79"/>
-            <path d="M76 20 L96 31 L106 55 L96 79 L76 90"/>
-            <path d="M96 31 L82 45 L96 55 L82 65 L96 79"/>
-          </g>
-          <g fill="#e11d48">
-            <polygon points="44,14 50,17.5 50,24.5 44,28 38,24.5 38,17.5"/>
-            <polygon points="76,14 82,17.5 82,24.5 76,28 70,24.5 70,17.5"/>
-            <polygon points="14,48 20,51.5 20,58.5 14,62 8,58.5 8,51.5"/>
-            <polygon points="106,48 112,51.5 112,58.5 106,62 100,58.5 100,51.5"/>
-            <polygon points="44,82 50,85.5 50,92.5 44,96 38,92.5 38,85.5"/>
-            <polygon points="76,82 82,85.5 82,92.5 76,96 70,92.5 70,85.5"/>
-          </g>
-          <path d="M51 15 H69 L60 28 L69 41 H51 L60 28 Z" stroke="#fb7185" stroke-width="3.2" fill="#2a0813" stroke-linejoin="round"/>
-          <path d="M48 26 L36 33 V50 L76 68 V83 L60 92 L40 81 V69" stroke="#fb7185" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M72 26 L84 33 V46 M46 45 L72 57 V75" stroke="#e11d48" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="80" cy="49" r="4.5" stroke="#fb7185" stroke-width="3" fill="#0b0e17"/>
-          <circle cx="46" cy="64" r="4.5" stroke="#fb7185" stroke-width="3" fill="#0b0e17"/>
-          <circle cx="60" cy="75" r="6.5" fill="#e11d48" stroke="#fb7185" stroke-width="2.5"/>
-        </svg>
+        <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="Logo SARAIVA LABS">
         <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </a>
       <div class="nav-links">
@@ -805,23 +797,7 @@
 
           <div class="hero-panel">
             <div class="hero-panel-header">
-              <svg style="width:44px;height:44px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(225,29,72,0.5));" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#be123c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M44 20 L24 31 L14 55 L24 79 L44 90"/>
-                  <path d="M76 20 L96 31 L106 55 L96 79 L76 90"/>
-                </g>
-                <g fill="#e11d48">
-                  <polygon points="44,14 50,17.5 50,24.5 44,28 38,24.5 38,17.5"/>
-                  <polygon points="76,14 82,17.5 82,24.5 76,28 70,24.5 70,17.5"/>
-                  <polygon points="14,48 20,51.5 20,58.5 14,62 8,58.5 8,51.5"/>
-                  <polygon points="106,48 112,51.5 112,58.5 106,62 100,58.5 100,51.5"/>
-                  <polygon points="44,82 50,85.5 50,92.5 44,96 38,92.5 38,85.5"/>
-                  <polygon points="76,82 82,85.5 82,92.5 76,96 70,92.5 70,85.5"/>
-                </g>
-                <path d="M51 15 H69 L60 28 L69 41 H51 L60 28 Z" stroke="#fb7185" stroke-width="3.2" fill="#2a0813" stroke-linejoin="round"/>
-                <path d="M48 26 L36 33 V50 L76 68 V83 L60 92 L40 81 V69" stroke="#fb7185" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="60" cy="75" r="6.5" fill="#e11d48" stroke="#fb7185" stroke-width="2.5"/>
-              </svg>
+              <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="Símbolo SARAIVA LABS">
               <div>
                 <strong>ARQUITETURA SARAIVA LABS</strong>
                 <span>● Engenharia de Processos e Web</span>
@@ -985,11 +961,7 @@
   <footer>
     <div class="container">
       <div class="footer-brand">
-        <svg style="width:28px;height:28px;filter:drop-shadow(0 0 6px rgba(225,29,72,0.45));" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M51 15 H69 L60 28 L69 41 H51 L60 28 Z" stroke="#fb7185" stroke-width="4" fill="#2a0813" stroke-linejoin="round"/>
-          <path d="M48 26 L36 33 V50 L76 68 V83 L60 92 L40 81 V69" stroke="#fb7185" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="60" cy="75" r="7" fill="#e11d48"/>
-        </svg>
+        <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="SARAIVA LABS">
         <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </div>
       <p>Desenvolvido por Luís Gustavo Saraiva • Sistemas Web, Logística e Gestão Administrativa</p>
