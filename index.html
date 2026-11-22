@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SARAIVA LABS • Sistemas Web, Gestão Logística e Administrativa</title>
+  <link rel="icon" type="image/png" href="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-oficial-saraiva-labs.png">
   <style>
     :root {
       /* Assinatura Crimson Rubi */
@@ -58,7 +59,7 @@
       padding: 0 24px;
     }
 
-    /* NAVBAR DARK TECH INTEGRADA AO LOGO */
+    /* NAVBAR DARK TECH INTEGRADA AO EMBLEMA */
     nav {
       position: sticky;
       top: 0;
@@ -73,26 +74,47 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 88px;
+      height: 80px;
     }
 
     .logo {
       display: flex;
       align-items: center;
+      gap: 12px;
+      font-size: 1.24rem;
+      letter-spacing: 1.8px;
       text-decoration: none;
+      color: var(--text-white);
     }
 
     .logo img {
-      height: 68px;
-      width: auto;
+      height: 46px;
+      width: 46px;
       object-fit: contain;
+      border-radius: 10px;
       mix-blend-mode: lighten;
-      filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.45));
+      filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.5));
       transition: transform 0.2s;
     }
 
     .logo:hover img {
-      transform: scale(1.02);
+      transform: scale(1.04);
+    }
+
+    .logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    .logo-text .brand-heavy {
+      font-weight: 900;
+      color: var(--text-white);
+    }
+
+    .logo-text .brand-light {
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .nav-links {
@@ -257,11 +279,12 @@
     }
 
     .hero-panel-header img {
-      height: 68px;
-      width: auto;
+      height: 52px;
+      width: 52px;
       object-fit: contain;
+      border-radius: 10px;
       mix-blend-mode: lighten;
-      filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.45));
+      filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.45));
       flex-shrink: 0;
     }
 
@@ -579,19 +602,22 @@
     }
 
     .footer-brand {
-      display: flex;
-      flex-direction: column;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+      letter-spacing: 1.6px;
     }
 
     .footer-brand img {
-      height: 96px;
-      width: auto;
+      height: 44px;
+      width: 44px;
       object-fit: contain;
+      border-radius: 10px;
       mix-blend-mode: lighten;
-      filter: drop-shadow(0 0 12px rgba(225, 29, 72, 0.4));
+      filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.45));
     }
 
     /* MODAL DE TRIAGEM DE PROJETO */
@@ -738,8 +764,9 @@
     }
 
     @media (max-width: 860px) {
-      .nav-inner { height: 76px; }
-      .logo img { height: 56px; }
+      .nav-inner { height: 72px; }
+      .logo img { height: 40px; width: 40px; }
+      .logo { font-size: 1.1rem; }
       .hero { padding: 42px 24px; }
       .hero-grid, .about-box { grid-template-columns: 1fr; }
       .nav-links a { display: none; }
@@ -752,7 +779,8 @@
   <nav>
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="Logo SARAIVA LABS">
+        <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-oficial-saraiva-labs.png" alt="Logo SARAIVA LABS">
+        <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </a>
       <div class="nav-links">
         <a href="#solucoes">Soluções</a>
@@ -784,7 +812,7 @@
 
           <div class="hero-panel">
             <div class="hero-panel-header">
-              <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="Símbolo SARAIVA LABS">
+              <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-oficial-saraiva-labs.png" alt="Símbolo SARAIVA LABS">
               <div>
                 <strong>ARQUITETURA SARAIVA LABS</strong>
                 <span>● Engenharia de Processos e Web</span>
@@ -948,7 +976,8 @@
   <footer>
     <div class="container">
       <div class="footer-brand">
-        <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-saraiva-labs.png" alt="SARAIVA LABS">
+        <img src="https://lgsaraivaasouza.github.io/midia-saraiva-labs/logo-oficial-saraiva-labs.png" alt="SARAIVA LABS">
+        <span class="logo-text"><span class="brand-heavy">SARAIVA</span><span class="brand-light">LABS</span></span>
       </div>
       <p>Desenvolvido por Luís Gustavo Saraiva • Sistemas Web, Logística e Gestão Administrativa</p>
     </div>
